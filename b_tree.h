@@ -10,5 +10,4 @@ typedef struct tnode
 
 TNode * init();
 int print(TNode * node, int tab);
-TNode * create(int value);
-TNode * free_all(TNode * node);
+void freeAll(TNode * node);
