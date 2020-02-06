@@ -1,19 +1,49 @@
- #include "b_tree.h"
- TNode randomize(TNode *node);
+#include "b_tree.h"
 
-TNode *init(){
-  return NULL;
+TNode randomize(TNode * node);
+void printTreeDinamic(TNode * node, int tab);
+
+TNode * init()
+{
+    return NULL;
 }
 
-TNode print(TNode *node, int tab){
+int print(TNode * node, int tab)
+{
+    if(node != NULL)
+    {
+        printTreeDinamic(node, tab);
 
+        return 1;
+    }
+
+    return 0;
 }
 
-TNode *create(int value){
-  TNode *new;
-  new = (TNode *)malloc(sizeof(TNode));
-  new->right = NULL;
-  new->left = NULL;
-  new->value = NULL;
+void printTreeDinamic(TNode * node, int tab)
+{
+    if(node->left != NULL) printTreeDinamic(node->left, tab + 1);
+
+    int i;
+    for(int i = 0; i < tab; i++)
+    {
+        printf("\T");
+    }
+    printf("%i\n", node->value);
+
+    if(node->right != NULL) printTreeDinamic(node->right, tab + 1);
 }
 
+TNode * create(int value)
+{
+    TNode * new;
+    new = (TNode *) malloc(sizeof(TNode));
+    new->right = NULL;
+    new->left = NULL;
+    new->value = NULL;
+}
+
+TNode randomize(TNode * node)
+{
+    
+}
