@@ -20,7 +20,7 @@ public class Program
 
         baseArray = new int[convertedLine];
         UpdateArrayValues();
-        MountTree(0, convertedLine);
+        root = MountTree(0, convertedLine);
         PrintTree(root, 0);
 	}
 
