@@ -1,6 +1,5 @@
 #include "b_tree.h"
 
-
 TNode *randomizedTree(TNode *tree, int *vector);
 void printTreeDinamic(TNode * node, int tab);
 TNode * createNode(int value);
@@ -10,16 +9,15 @@ TNode * init()
     return NULL; 
 }
 
-int print(TNode * node, int tab)
+int printTree(TNode * node)
 {
     if(node != NULL)
     {
-        printTreeDinamic(node, tab);
+        printTreeDinamic(node, 0);
         return 1;
     }
     return 0;
 }
-
 
 void printTreeDinamic(TNode * node, int tab)
 {
@@ -35,6 +33,21 @@ void printTreeDinamic(TNode * node, int tab)
     if(node->right != NULL) printTreeDinamic(node->right, tab + 1);
 }
 
+TNode * createTree(int init, int final, int * vector)
+{
+    if(init >= final)
+        return NULL;
+
+    int random = (rand() % (final + 1 - init)) + init;
+
+    TNode * node = createNode(vector[random]);
+
+    node->left = createTree(init, random - 1, vector);
+    node->right = createTree(random, final, vector);
+
+    return node;
+}
+
 TNode * createNode(int value)
 {
     TNode * new;
@@ -44,29 +57,25 @@ TNode * createNode(int value)
     new->value = value;
 }
 
-int pivot(int n) {
+int pivot(int n) 
+{
     return rand() % n;
 }
 
-int * returnList(int n){
-    int list[n];
-    for (int i = 0; i < n; ++i){
-        list[i] = (rand() % 100);
-    }
-} 
-
-TNode *randomizedTree(TNode *tree, int *vector){
+TNode *randomizedTree(TNode *tree, int *vector)
+{
     int n = sizeof(vector)/sizeof(int);
     int p = pivot(n);
 }
 
- void posOrdem(TNode *node){
-     if(node != NULL){
-         posOrdem(node->left);
-         posOrdem(node->right);
-         node->index +=1;
-     }
- }
+void posOrdem(TNode *node)
+{
+    if(node != NULL){
+        posOrdem(node->left);
+        posOrdem(node->right);
+        node->index +=1;
+    }
+}
 
 void freeAll(TNode * node)
 {

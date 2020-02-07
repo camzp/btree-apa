@@ -10,9 +10,10 @@ typedef struct tnode
 } TNode;
 
 TNode * init();
-int print(TNode * node, int tab);
+int printTree(TNode * node);
 void freeAll(TNode * node);
 // TNode returnChild(TNode *node);
 // TNode returnGChild(TNode *node);
 int returnQntChild(int vector);
 int returnQntGChild(int vector);
+TNode * createTree(int init, int final, int * vector);
