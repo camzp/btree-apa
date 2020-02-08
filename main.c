@@ -5,7 +5,7 @@ int main()
     int qntNode = 0;
     TNode * tree = init();
     printf("Digite a quantidade maxima de nós");
-    scanf("%i", qntNode);
+    scanf("%i", &qntNode);
 
     int i; int vector[20];
     for(i = 0; i < 20; i++)
