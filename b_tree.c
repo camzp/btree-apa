@@ -40,15 +40,15 @@ TNode * createTree(int init, int final, int * vector)
 {
     if(init >= final)
         return NULL;
+        srand(time(NULL));
+        int random = (rand() % (final + 1 - init)) + init;
 
-    int random = (rand() % (final + 1 - init)) + init;
+        TNode * node = createNode(vector[random]);
 
-    TNode * node = createNode(vector[random]);
+        node->left = createTree(init, random - 1, vector);
+        node->right = createTree(random, final, vector);
 
-    node->left = createTree(init, random - 1, vector);
-    node->right = createTree(random, final, vector);
-
-    return node;
+        return node;
 }
 
 TNode * createNode(int value)

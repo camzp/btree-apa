@@ -4,16 +4,16 @@ int main()
 {
     int qntNode = 0;
     TNode * tree = init();
-    printf("Digite a quantidade maxima de nós");
+    printf("Digite a quantidade maxima de nós: ");
     scanf("%i", &qntNode);
 
-    int i; int vector[20];
-    for(i = 0; i < 20; i++)
+    int i; int vector[qntNode];
+    for(i = 0; i <qntNode; i++)
     {
         vector[i] = i;
     }
 
-    tree = createTree(0, 20, vector);
+    tree = createTree(0, qntNode, vector);
     printTree(tree);
 
     int max[20];
