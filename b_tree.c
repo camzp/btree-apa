@@ -28,7 +28,7 @@ void printTreeDinamic(TNode * node, int tab)
         int i;
         for(int i = 0; i < tab; i++)
         {
-            printf(" -- ");
+            printf("--");
         }
         printf("%d\n", node->value);
 
@@ -42,9 +42,7 @@ TNode * createTree(int init, int final, int * vector)
         return NULL;
         srand(time(NULL ));
         int random = (rand() % (final + 1 - init)) + init;
-
         TNode * node = createNode(vector[random]);
-
         node->left = createTree(init, random - 1, vector);
         node->right = createTree(random, final, vector);
 
