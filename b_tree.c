@@ -40,7 +40,7 @@ TNode * createTree(int init, int final, int * vector)
 {
     if(init >= final)
         return NULL;
-        srand(time(NULL));
+        srand(time(NULL ));
         int random = (rand() % (final + 1 - init)) + init;
 
         TNode * node = createNode(vector[random]);
