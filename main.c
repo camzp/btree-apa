@@ -7,7 +7,9 @@ int main()
     printf("Digite a quantidade maxima de nós: ");
     scanf("%i", &qntNode);
 
-    int i; int vector[qntNode];
+    int i; 
+    int vector[qntNode];
+    
     for(i = 0; i <qntNode; i++)
     {
         vector[i] = i;
