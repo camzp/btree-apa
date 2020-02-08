@@ -5,8 +5,8 @@ typedef struct tnode
 {
     int value;
     int index;
-    struct node * left;
-    struct node * right;
+    struct tnode * left;
+    struct tnode * right;
 } TNode;
 
 TNode * init();
