@@ -28,9 +28,9 @@ void printTreeDinamic(TNode * node, int tab)
         int i;
         for(int i = 0; i < tab; i++)
         {
-            printf("\T");
+            printf(" -- ");
         }
-        printf("%i[index = %d]\n", node->value, node->index);
+        printf("%d\n", node->value);
 
         if(node->right != NULL) printTreeDinamic(node->right, tab + 1);
     }
