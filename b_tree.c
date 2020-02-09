@@ -2,6 +2,10 @@
 
 int baseIndex = 0;
 
+int max [50];
+int child[50];
+int gChild[50];
+
 TNode * init() 
 {
     return NULL; 

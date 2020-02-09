@@ -21,8 +21,5 @@ int main()
     setIndex(tree);
     printIndex(tree);
 
-    int max [qntNode];
-    int child[qntNode];
-    int gChild[qntNode];
     return 0;
 }
