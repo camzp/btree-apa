@@ -13,8 +13,9 @@ typedef struct tnode
 TNode * init();
 int printTree(TNode * node);
 void freeAll(TNode * node);
-// TNode returnChild(TNode *node);
-// TNode returnGChild(TNode *node);
+TNode * randomizedTree(TNode * tree, int * vector);
+void printTreeDinamic(TNode * node, int tab);
+TNode * createNode(int value);
 int returnQntChild(int vector);
 int returnQntGChild(int vector);
 TNode * createTree(int init, int final, int * vector);

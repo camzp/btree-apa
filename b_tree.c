@@ -1,9 +1,5 @@
 #include "b_tree.h"
 
-TNode * randomizedTree(TNode * tree, int * vector);
-void printTreeDinamic(TNode * node, int tab);
-TNode * createNode(int value);
-
 TNode * init() 
 {
     return NULL; 
@@ -40,9 +36,12 @@ TNode * createTree(int init, int final, int * vector)
 {
     if(init >= final)
         return NULL;
-        
+
     srand(time(NULL ));
     int random = (rand() % (final + 1 - init)) + init;
+
+    printf("init = %i final = %i Rand = %i", init, final, random );
+
     TNode * node = createNode(vector[random]);
     node->left = createTree(init, random - 1, vector);
     node->right = createTree(random, final, vector);
