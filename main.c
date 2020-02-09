@@ -16,7 +16,7 @@ int main()
     }
 
     tree = createTree(0, qntNode, vector, 0);
-    //printTree(tree);
+    printTree(tree);
 
     int max [qntNode];
     int child[qntNode];
