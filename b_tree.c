@@ -1,5 +1,7 @@
 #include "b_tree.h"
 
+int baseIndex = 0;
+
 TNode * init() 
 {
     return NULL; 
@@ -29,6 +31,46 @@ void printTreeDinamic(TNode * node, int tab)
         printf("%d\n", node->value);
 
         if(node->right != NULL) printTreeDinamic(node->right, tab + 1);
+    }
+}
+
+int printIndex(TNode * node)
+{
+    if(node != NULL)
+    {
+        printTreeIndex(node, 0);
+        return 1;
+    }
+    return 0;
+}
+
+void printTreeIndex(TNode * node, int tab)
+{
+    if(node != NULL)
+    {
+        if(node->left != NULL) printTreeDinamic(node->left, tab + 1);
+
+        int i;
+        for(int i = 0; i < tab; i++)
+        {
+            printf("--");
+        }
+        printf("%d\n", node->index);
+
+        if(node->right != NULL) printTreeDinamic(node->right, tab + 1);
+    }
+}
+
+void setIndex(TNode * node)
+{
+    if(node != NULL)
+    {
+        setIndex(node->left);
+
+        node->index = baseIndex;
+        baseIndex ++;
+
+        setIndex(node->right);
     }
 }
 
