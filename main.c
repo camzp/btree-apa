@@ -15,7 +15,7 @@ int main()
         vector[i] = i;
     }
 
-    tree = createTree(0, qntNode, vector);
+    tree = createTree(0, qntNode, vector, 0);
     printTree(tree);
 
     int max [qntNode];

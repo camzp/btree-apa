@@ -36,6 +36,8 @@ TNode * createTree(int init, int final, int * vector, int call)
 {
     printf("Call = %i init = %i final = %i",call, init, final);
 
+    if(call > final) return NULL;
+
     if(init >= final)
         return NULL;
 
