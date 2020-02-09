@@ -10,7 +10,7 @@ int main()
     int i; 
     int vector[qntNode];
     
-    for(i = 0; i <qntNode; i++)
+    for(i = 0; i < qntNode; i++)
     {
         vector[i] = i;
     }

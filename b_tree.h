@@ -18,4 +18,4 @@ void printTreeDinamic(TNode * node, int tab);
 TNode * createNode(int value);
 int returnQntChild(int vector);
 int returnQntGChild(int vector);
-TNode * createTree(int init, int final, int * vector);
+TNode * createTree(int init, int final, int * vector, int call);

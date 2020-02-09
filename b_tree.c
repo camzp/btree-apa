@@ -32,19 +32,21 @@ void printTreeDinamic(TNode * node, int tab)
     }
 }
 
-TNode * createTree(int init, int final, int * vector)
+TNode * createTree(int init, int final, int * vector, int call)
 {
+    printf("Call = %i init = %i final = %i",call, init, final);
+
     if(init >= final)
         return NULL;
 
-    srand(time(NULL ));
-    int random = (rand() % (final + 1 - init)) + init;
+    srand(time(NULL));
+    int random = (rand() % (final - init)) + init;
 
     printf("init = %i final = %i Rand = %i", init, final, random );
 
     TNode * node = createNode(vector[random]);
-    node->left = createTree(init, random - 1, vector);
-    node->right = createTree(random, final, vector);
+    node->left = createTree(init, random - 1, vector, call + 1);
+    node->right = createTree(random, final, vector, call + 1);
 
     return node;
 }
