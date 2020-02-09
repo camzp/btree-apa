@@ -48,7 +48,12 @@ TNode * createTree(int init, int final, int * vector, int call)
     }
 
     srand(time(NULL));
-    int random = (rand() % (final - init)) + init;
+    int random = (rand() % (final - init)) + init + 1;
+
+    if(random == final)
+        random --;
+    else if(random == init)
+        random ++;
 
     printf("init = %i final = %i Rand = %i\n", init, final, random );
 
