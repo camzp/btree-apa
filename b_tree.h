@@ -21,3 +21,4 @@ int returnQntGChild(int vector);
 TNode * createTree(int init, int final, int * vector, int call);
 int printIndex(TNode * node);
 void printTreeIndex(TNode * node, int tab);
+void setIndex(TNode * node);

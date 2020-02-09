@@ -18,7 +18,7 @@ int main()
     tree = createTree(0, qntNode, vector, 0);
     printTree(tree);
 
-    printf("/n/n/n/n INDEX /n/n/n/n");
+    printf("\n\n\n\n INDEX \n\n\n\n");
 
     setIndex(tree);
     printIndex(tree);
